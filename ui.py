@@ -1,4 +1,3 @@
-from re import L
 import bpy
 from bpy.types import Panel, Operator
 from nftgen import render
