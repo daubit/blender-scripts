@@ -3,7 +3,6 @@ import sys
 import os
 
 dir = os.path.join(os.path.dirname(bpy.data.filepath), "gen-nft")
-print(dir)
 if not dir in sys.path:
     sys.path.append(dir)
 
@@ -35,5 +34,5 @@ def unregister():
     properties_unregister()
 
 
-# if __name__ == '__main__':
-#     register()
+if __name__ == '__main__':
+    register()

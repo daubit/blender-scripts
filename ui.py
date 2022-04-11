@@ -1,6 +1,7 @@
 from re import L
 import bpy
 from bpy.types import Panel, Operator
+from nftgen import render
 
 
 class GenerateNFT(Operator):
@@ -10,6 +11,16 @@ class GenerateNFT(Operator):
 
     def execute(self, context):
         print("Button!")
+        # get properties from scene
+        scene = context.scene
+        res_x = scene.res_x
+        res_y = scene.res_y
+        output_dir = scene.output_dir
+        scene_name = scene.scene_name
+        file_format = scene.file_format
+
+        render(output_dir, (res_x, res_y), scene_name, file_format)
+
         return {'FINISHED'}
 
 
@@ -22,22 +33,27 @@ class NFTPanel(Panel):
 
     def draw(self, context):
         layout = self.layout
-        row = layout.row()
-        row.label(text="Hello World!", icon='WORLD_DATA')
+        scene = context.scene
 
         # resolution input
         row = layout.row()
         row.label(text="Resolution:")
-        row.prop("res_x")
-        row.prop("res_y")
+        row.prop(scene, "res_x")
+        row.prop(scene, "res_y")
 
         # output directory path
+        row = layout.row()
         row.label(text="Output Directory:")
-        row.prop("output_dir")
+        row.prop(scene, "output_dir")
+
+        # scene name
+        row = layout.row()
+        row.label(text="Camera Scene Name:")
+        row.prop(scene, "scene_name")
 
         # file format
         row.label(text="File Format:")
-        row.prop("file_format")
+        row.prop(scene, "file_format")
 
         # render
         row = layout.row()

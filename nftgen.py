@@ -95,6 +95,10 @@ def render(path, res=(128, 128), cam_scene="Scene", file_format="PNG"):
     scene = bpy.context.scene
     scene.render.image_settings.file_format = file_format
 
+    # create all folders to path
+    if not os.path.exists(path):
+        os.makedirs(path)
+
     for i, combination in enumerate(combinations):
         print(f"{i}/{total}")
         render_scene(combination, path, file_format)
