@@ -9,7 +9,6 @@ class GenerateNFT(Operator):
     bl_label = "Generate NFT"
 
     def execute(self, context):
-        print("Button!")
         # get properties from scene
         scene = context.scene
         res_x = scene.res_x
