@@ -1,10 +1,5 @@
-import bpy
-import sys
-import os
-
-dir = os.path.join(os.path.dirname(bpy.data.filepath), "gen-nft")
-if not dir in sys.path:
-    sys.path.append(dir)
+import properties
+import ui
 
 bl_info = {
     "name": "NFT Generator",
@@ -20,18 +15,15 @@ bl_info = {
     "category": "Render"
 }
 
+
 def register():
-    from ui import register as ui_register
-    from properties import register as properties_register
-    ui_register()
-    properties_register()
+    ui.register()
+    properties.register()
 
 
 def unregister():
-    from ui import unregister as ui_unregister
-    from properties import unregister as properties_unregister
-    ui_unregister()
-    properties_unregister()
+    ui.unregister()
+    properties.unregister()
 
 
 if __name__ == '__main__':
