@@ -2,7 +2,7 @@ import bpy
 import sys
 import os
 
-dir = os.path.join(os.path.dirname(bpy.data.filepath), "gen-nft")
+dir = os.path.dirname(__file__)
 if not dir in sys.path:
     sys.path.append(dir)
 
@@ -19,6 +19,7 @@ bl_info = {
     "support": "COMMUNITY",
     "category": "Render"
 }
+
 
 def register():
     from ui import register as ui_register
