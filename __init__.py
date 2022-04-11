@@ -20,7 +20,6 @@ bl_info = {
     "category": "Render"
 }
 
-
 def register():
     from ui import register as ui_register
     from properties import register as properties_register
