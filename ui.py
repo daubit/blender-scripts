@@ -129,12 +129,13 @@ class NFTPanel(Panel):
             row.label(text="Output Directory:")
             row.prop(scene, "output_dir")
 
-            # scene name
+            # target collection
             row = layout.row()
             row.label(text="Target Collection Name:")
             row.prop(scene, "target_collection")
 
             # file format
+            row = layout.row()
             row.label(text="File Format:")
             row.prop(scene, "file_format")
 
