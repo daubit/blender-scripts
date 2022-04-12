@@ -21,9 +21,9 @@ Adjust the nft properties in the `NFT Generator` panel and click `Render`.
 
 ### Properties
 
-| Property Name     | Type       | Default Value | Description                                           |
-| ----------------- | ---------- | ------------- | ----------------------------------------------------- |
-| Resolution        | (int, int) | (128, 128)    | The resolution of the generated NFTs.                 |
-| Output Directory  | string     | "Home/NFTs"   | The directory string path to the output directory.    |
-| Target Collection | string     | "NFT Gen"     | The collection name where all the objects are located |
-| File Format       | Enum       | "PNG"         | The output file format for the generated NFTs.        |
+| Property Name     | Type       | Default Value | Description                                            |
+| ----------------- | ---------- | ------------- | ------------------------------------------------------ |
+| Resolution        | (int, int) | (128, 128)    | The resolution of the generated NFTs.                  |
+| Output Directory  | string     | "Home/NFTs"   | The directory string path to the output directory.     |
+| Target Collection | string     | "NFT Gen"     | The collection name where all the objects are located. |
+| File Format       | Enum       | "PNG"         | The output file format for the generated NFTs.         |
