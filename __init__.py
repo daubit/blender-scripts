@@ -21,6 +21,11 @@ bl_info = {
 }
 
 def register():
+    try:
+        unregister()
+    except:
+        pass
+
     from ui import register as ui_register
     from properties import register as properties_register
     ui_register()
