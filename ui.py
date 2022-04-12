@@ -143,7 +143,7 @@ class NFTPanel(Panel):
             row = layout.row()
             row.operator_context = "INVOKE_DEFAULT"
             row.operator(ProgressbarOperator.bl_idname,
-                         text="Render", icon="RENDER_STILL")
+                         text="Generate NFTs", icon="RENDER_STILL")
 
 
 def register():
