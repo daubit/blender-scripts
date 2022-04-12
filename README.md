@@ -16,7 +16,7 @@ Go to `Scene Properties > NFT Generator`.
 
 Move all objects that is a part of the NFT into a collection called `NFT Gen` (The collection name can be adjusted in the `NFT Generator` panel).
 
-Adjust the nft properties in the `NFT Generator` panel and click `Render`.
+Adjust the nft properties in the `NFT Generator` panel and click `Generate NFTs`.
 (This may take some time depending on the complexity of your scene. NOTE: The rendering is done on the main thread and on the GPU to speed up the process.)
 
 ### Properties
