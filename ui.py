@@ -56,7 +56,7 @@ class ProgressbarOperator(Operator):
 
                 return {'RUNNING_MODAL'}
 
-        return {'RUNNING_MODAL'}
+        return {'PASS_THROUGH'}
 
     def invoke(self, context, event):
         # terermine max step
@@ -114,9 +114,9 @@ class NFTPanel(Panel):
             row = layout.row()
             row.active = False
             row.label(text=scene.progress_label)
-            # row = layout.row()
-            # row.operator(StopButton.bl_idname,
-            #              text="Cancel", icon="CANCEL")
+            row = layout.row()
+            row.operator(StopButton.bl_idname,
+                         text="Cancel", icon="CANCEL")
         else:
             # resolution input
             row = layout.row()

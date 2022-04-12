@@ -14,7 +14,7 @@ file_types = [
 def register():
     Scene.res_x = IntProperty(default=128, min=1)
     Scene.res_y = IntProperty(default=128, min=1)
-    Scene.output_dir = StringProperty(default=os.path.expanduser('~'))
+    Scene.output_dir = StringProperty(default=os.path.join(os.path.expanduser('~'), "NFTs"))
     Scene.target_collection = StringProperty(default="NFT Gen")
     Scene.file_format = EnumProperty(items=file_types, default="PNG")
 

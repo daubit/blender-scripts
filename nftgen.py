@@ -1,15 +1,12 @@
-from math import comb
 import bpy
 import os
 import itertools as it
 from collections import OrderedDict
 
 
-def get_total_combinations(collections):
+def get_total_combinations(cols):
     total = 1
-    for layer in collections:
-        if layer.name == "Scene":
-            continue
+    for layer in cols:
         if len(layer.objects) > 0:
             total *= len(layer.objects)
     return total
@@ -75,11 +72,11 @@ def get_render_operations(path, res=(128, 128), target_collection="NFT Gen", fil
         obj.hide_render = False
 
     # Get all objects
-    collections = get_collections(bpy.data.collections[target_collection])
+    cols = get_collections(bpy.data.collections[target_collection], [])
     layers = OrderedDict()
 
     # disable all objects in each collection
-    for collection in collections:
+    for collection in cols:
         collection.hide_viewport = False
         collection.hide_render = False
 
@@ -94,7 +91,8 @@ def get_render_operations(path, res=(128, 128), target_collection="NFT Gen", fil
             obj.hide_viewport = True
             obj.hide_render = True
 
-    total = get_total_combinations(collections)
+    total = 0
+    total = get_total_combinations(cols)
     print(f"Total combinations: {total}")
 
     allNames = list(layers.keys())
