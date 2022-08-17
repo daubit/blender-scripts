@@ -10,7 +10,7 @@ bl_info = {
     "name": "NFT Generator",
     "description": "Generate NFT",
     "author": "Eugene Matsumura",
-    "version": (1, 0),
+    "version": (1, 2),
     "blender": (2, 80, 0),
     "location": "View3D > Tools",
     "warning": "",
@@ -19,6 +19,7 @@ bl_info = {
     "support": "COMMUNITY",
     "category": "Render"
 }
+
 
 def register():
     try:

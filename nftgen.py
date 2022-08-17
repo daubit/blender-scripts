@@ -102,6 +102,7 @@ def get_render_operations(path, res=(128, 128), target_collection="NFT Gen", fil
 
     scene = bpy.context.scene
     scene.render.image_settings.file_format = file_format
+    scene.render.image_settings.color_mode = "RGBA"
 
     # create all folders to path
     if not os.path.exists(path):
